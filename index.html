@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aventuras de Corazón Alegre</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="./img/luna.png" type="image/x-icon">
+</head>
+<body>
+  <div id="app">
+    <!-- Contenido dinámico -->
+  </div>
+
+  <!-- Mascot (visible en todos los módulos si se desea) -->
+  <div id="mascot-container" class="hidden">
+    <img src="./img/luna.png" alt="Luna la Conejita" id="mascot-luna">
+    <div id="mascot-speech-bubble" class="speech-bubble">
+      <p id="mascot-text">¡Hola! Soy Luna, ¡vamos a jugar!</p>
+    </div>
+  </div>
+
+  <!-- =========== PLANTILLAS DE MÓDULOS =========== -->
+
+  <!-- Plantilla para la pantalla de estudiante (MENÚ PRINCIPAL) -->
+  <template id="student-menu-template">
+    <div class="estudiante">
+      <h1>¡Hola <span id="student-name"></span>!</h1>
+      <p>Un mundo para explorar, sentir y crear.</p>
+      <div class="menu">
+        <button id="start-art-module" class="menu-button-art">El bosque de los colores <span class="button-icon">🎨</span></button>
+        <button id="start-story-module" class="menu-button-literature">El rincón de los cuentos <span class="button-icon">📚</span></button>
+        <button id="start-explore-module" class="menu-button-exploration">El jardín explorador <span class="button-icon">🦋</span></button>
+        <button id="start-emotions-module" class="menu-button-emotions">La isla de las emociones <span class="button-icon">😊</span></button>
+        <button id="start-freeplay-module" class="menu-button-freeplay">El valle de las letras <span class="button-icon">🔠</span></button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Plantilla para el módulo "El Bosque de los Colores" (ARTE) -->
+  <template id="art-module-template">
+    <div class="game-module" id="art-forest">
+      <h2>El Bosque de los Colores</h2>
+      <div class="module-content">
+        <p>¡Aquí podrás pintar y crear obras maestras!</p>
+        <div id="toolbar-art" class="toolbar">
+          <button class="color-btn" data-color="red" style="background-color:red;"></button>
+          <button class="color-btn" data-color="blue" style="background-color:blue;"></button>
+          <button class="color-btn" data-color="yellow" style="background-color:yellow;"></button>
+          <button class="color-btn" data-color="green" style="background-color:green;"></button>
+          <button class="color-btn" data-color="black" style="background-color:black;"></button>
+          <button id="eraser-btn">Goma</button>
+          <input type="range" id="brush-size" min="2" max="50" value="5" title="Tamaño del pincel">
+          <button id="clear-canvas-art">Borrar Todo</button>
+        </div>
+        <canvas id="drawing-canvas" width="500" height="350" style="border:2px solid #ccc; cursor: crosshair;"></canvas>
+      </div>
+      <button id="back-to-menu-art" class="game-button">Volver al Menú</button>
+    </div>
+  </template>
+
+  <!-- Plantilla para el módulo "El Rincón de los Cuentos" (LITERATURA) -->
+  <template id="literature-module-template">
+    <div class="game-module" id="story-corner">
+      <h2>El Rincón de los Cuentos</h2>
+      <div class="module-content">
+        <p>¡Descubre historias mágicas y divertidas!</p>
+        <div id="story-container" class="story-container">
+          <div id="story-content"></div>
+          <button id="new-story-btn" class="game-button">Nueva Historia</button>
+        </div>
+      </div>
+      <button id="back-to-menu-literature" class="game-button">Volver al Menú</button>
+    </div>
+  </template>
+
+  <!-- Plantilla para el módulo "El Jardín Explorador" (EXPLORACIÓN) -->
+  <template id="exploration-module-template">
+    <div class="game-module" id="explorers-garden">
+      <h2>El Jardín Explorador</h2>
+      <div class="module-content">
+        <p>¡Descubre los secretos de la naturaleza!</p>
+        <div id="garden-scene" style="background-image: url('img/paisaje.png'); width: 500px; height: 400px; border: 2px solid #8FBC8F; margin:auto; position:relative; background-size:cover;">
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Butterfly/3D/butterfly_3d.png" 
+                alt="Mariposa" class="explorable-item butterfly" 
+                data-info="¡Una linda mariposa! Las mariposas ayudan a polinizar las flores.">
+            
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Tulip/3D/tulip_3d.png" 
+                alt="Flor Roja" class="explorable-item flower" 
+                data-info="¡Un hermoso tulipán! Las flores nos regalan colores y aromas.">
+            
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bird/3D/bird_3d.png" 
+                alt="Pájaro" class="explorable-item bird" 
+                data-info="¡Un pajarito cantor! Los pájaros alegran el jardín con su música.">
+            
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Ant/3D/ant_3d.png" 
+                alt="Hormiga" class="explorable-item ladybug" 
+                data-info="¡Una hormiguita trabajadora! Las hormigas son muy organizadas y trabajan en equipo.">
+            
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sun/3D/sun_3d.png" 
+                alt="Sol" class="explorable-item sun" 
+                data-info="¡El sol brillante! Da luz y calor a todas las plantas para que crezcan.">
+                
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Droplet/3D/droplet_3d.png" 
+                alt="Agua" class="explorable-item water" 
+                data-info="¡Gotitas de agua! El agua es muy importante para que todo crezca en el jardín.">
+        </div>
+      </div>
+      <button id="back-to-menu-exploration" class="game-button">Volver al Menú</button>
+    </div>
+  </template>
+
+  <!-- Plantilla para el módulo "La Isla de las Emociones" (EMOCIONES) -->
+  <template id="emotions-game-template">
+    <div class="game-module" id="emotions-island">
+      <h2>La Isla de las Emociones</h2>
+      <div class="module-content">
+        <div id="emotion-display-container">
+          <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Grinning%20Face/3D/grinning_face_3d.png" alt="Carita de emoción" id="emotion-face-img">
+        </div>
+        <div id="emotion-options" class="options-grid">
+          <!-- Los botones de opción se generarán aquí con JS -->
+        </div>
+      </div>
+      <button id="next-emotion-button" class="game-button hidden">Siguiente Emoción</button>
+      <button id="back-to-menu-emotions" class="game-button">Volver al Menú</button>
+    </div>
+  </template>
+
+  <!-- Plantilla para el módulo "El Castillo del Juego Libre" (JUEGO) -->
+  <template id="freeplay-module-template">
+    <div class="game-module" id="freeplay-castle">
+      <h2>El Valle de las Letras</h2>
+      <div class="module-content">
+        <div id="letter-matching-game" class="game-section">
+          <h3>¡Encuentra el sonido de la letra!</h3>
+          <div id="target-letter" class="letter-display">
+            <span id="current-letter"></span>
+          </div>
+          <div id="sound-buttons" class="letters-grid">
+            <!-- Los botones de sonido se generarán dinámicamente -->
+          </div>
+        </div>
+      </div>
+      <button id="back-to-menu-freeplay" class="game-button">Volver al Menú</button>
+    </div>
+  </template>
+
+
+  <!-- Plantilla para la pantalla de docente (sin cambios) -->
+  <template id="teacher-menu-template">
+    <div class="docente">
+      <h1>Bienvenido/a Profe <span id="teacher-name"></span></h1>
+      <div class="menu">
+        <button>Panel General</button>
+        <button>Gestión de Actividades</button>
+        <button>Resultados por Estudiante</button>
+        <button>Estadísticas</button>
+        <button>Retroalimentación</button>
+        <button>Registrar nuevo usuario</button>
+        <button>Configuración</button>
+        <button>Cerrar sesión</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Elementos de Audio para Sonidos -->
+  <audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+  <audio id="incorrect-sound" src="sounds/incorrect.mp3" preload="auto"></audio>
+  <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
+  <audio id="exploration-sound" src="sounds/discovery.mp3" preload="auto"></audio> <!-- Sonido para exploración -->
+
+
+  <script src="game.js"></script>
+  <script>
+    // Simulación del usuario
+    const usuario = {
+      nombre: "Pequeño",  // Cambiado de "Camila" a "Estudiante"
+      tipo_usuario: "estudiante",
+      edad: 5,
+      nivel_actual: 1
+    };
+
+    const app = document.getElementById("app");
+    const mascotContainer = document.getElementById("mascot-container");
+    const mascotText = document.getElementById("mascot-text");
+    const clickSound = document.getElementById('click-sound');
+
+    // Plantillas
+    const studentMenuTpl = document.getElementById("student-menu-template");
+    const teacherMenuTpl = document.getElementById("teacher-menu-template");
+    const artModuleTpl = document.getElementById("art-module-template");
+    const literatureModuleTpl = document.getElementById("literature-module-template");
+    const explorationModuleTpl = document.getElementById("exploration-module-template");
+    const emotionsGameTpl = document.getElementById("emotions-game-template");
+    const freeplayModuleTpl = document.getElementById("freeplay-module-template");
+
+    function playClickSound() {
+      if (clickSound) {
+        clickSound.currentTime = 0;
+        clickSound.play().catch(e => console.warn("Error al reproducir sonido click:", e));
+      }
+    }
+
+    function lunaSpeaks(message, showMascot = true) {
+      mascotText.textContent = message;
+      if (showMascot) {
+        mascotContainer.classList.remove("hidden");
+      } else {
+        mascotContainer.classList.add("hidden");
+      }
+    }
+
+    function loadModule(templateNode, initFunctionName, backButtonId, welcomeMessage) {
+        app.innerHTML = "";
+        const moduleNode = templateNode.content.cloneNode(true);
+        app.appendChild(moduleNode);
+
+        if (typeof window[initFunctionName] === 'function') {
+            window[initFunctionName](); // Llama a la función de inicialización del módulo (definida en game.js)
+        } else {
+            console.warn(`Función de inicialización ${initFunctionName} no encontrada.`);
+        }
+        
+        lunaSpeaks(welcomeMessage);
+        
+        document.getElementById(backButtonId).addEventListener("click", () => {
+            playClickSound();
+            showStudentMenu();
+        });
+    }
+
+    function showStudentMenu() {
+      app.innerHTML = "";
+      const studentMenuNode = studentMenuTpl.content.cloneNode(true);
+      studentMenuNode.getElementById("student-name").textContent = usuario.nombre;
+      app.appendChild(studentMenuNode);
+      lunaSpeaks(`¡Bienvenido! ¿Qué aventura elegimos hoy?`);  // Mensaje más general
+
+      document.getElementById("start-art-module").addEventListener("click", () => { 
+        playClickSound(); 
+        loadModule(artModuleTpl, "initArtModule", "back-to-menu-art", "¡Usa tu imaginación y pinta algo maravilloso en el Bosque de Colores!");
+      });
+      document.getElementById("start-story-module").addEventListener("click", () => { 
+        playClickSound(); 
+        loadModule(literatureModuleTpl, "initLiteratureModule", "back-to-menu-literature", "¡Prepara tus oídos para cuentos fantásticos en el Rincón de los Cuentos!");
+      });
+      document.getElementById("start-explore-module").addEventListener("click", () => { 
+        playClickSound(); 
+        loadModule(explorationModuleTpl, "initExplorationModule", "back-to-menu-exploration", "¡Hay muchos secretos por descubrir en el Jardín Explorador!");
+      });
+      document.getElementById("start-emotions-module").addEventListener("click", () => { 
+        playClickSound(); 
+        loadModule(emotionsGameTpl, "initEmotionGame", "back-to-menu-emotions", "¡Vamos a conocer las emociones en la Isla de las Emociones!");
+      });
+      document.getElementById("start-freeplay-module").addEventListener("click", () => { 
+        playClickSound(); 
+        loadModule(freeplayModuleTpl, "initFreeplayModule", "back-to-menu-freeplay", "¡En el Castillo del Juego Libre, la imaginación no tiene límites!");
+      });
+    }
+
+    function showTeacherMenu() {
+      // ... (código de showTeacherMenu sin cambios)
+      app.innerHTML = "";
+      const teacherMenuNode = teacherMenuTpl.content.cloneNode(true);
+      teacherMenuNode.getElementById("teacher-name").textContent = usuario.nombre;
+      app.appendChild(teacherMenuNode);
+      lunaSpeaks("", false); 
+    }
+
+    // Lógica inicial
+    if (usuario.tipo_usuario === "estudiante") {
+      showStudentMenu();
+    } else if (usuario.tipo_usuario === "docente") {
+      showTeacherMenu();
+    }
+  </script>
+</body>
+</html>

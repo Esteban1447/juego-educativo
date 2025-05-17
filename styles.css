@@ -1,0 +1,532 @@
+/* styles.css */
+/* ... (Estilos anteriores de body, #app, menu button, .estudiante, .docente, mascota, etc. se mantienen) ... */
+/* ... (Estilos específicos del módulo de emociones se mantienen) ... */
+
+body {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Fredoka One', cursive, sans-serif;
+  background: linear-gradient(135deg, #ffe7ba 0%, #b5ead7 100%); /* Pastel suave */
+  padding: 20px;
+  text-align: center;
+  color: #4A4A4A;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+#app {
+  background-color: rgba(255, 255, 255, 0.97);
+  padding: 25px 30px;
+  border-radius: 35px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+}
+
+/* Colores específicos para botones del menú principal */
+.menu-button-art {
+  background-image: linear-gradient(to right, #ffb5e8 0%, #b28dff 100%) !important; /* Rosa pastel a lila */
+}
+.menu-button-art:hover {
+  background-image: linear-gradient(to right, #ffcbf2 0%, #d0b3ff 100%) !important;
+}
+
+.menu-button-literature {
+  background-image: linear-gradient(to right, #b5ead7 0%, #ffdac1 100%) !important; /* Verde agua a durazno pastel */
+}
+.menu-button-literature:hover {
+  background-image: linear-gradient(to right, #d0f5e8 0%, #ffe5d9 100%) !important;
+}
+
+.menu-button-exploration {
+  background-image: linear-gradient(to right, #ffdac1 0%, #c7ceea 100%) !important; /* Durazno pastel a celeste */
+}
+.menu-button-exploration:hover {
+  background-image: linear-gradient(to right, #ffe5d9 0%, #e0e7ff 100%) !important;
+}
+
+.menu-button-emotions {
+  background-image: linear-gradient(to right, #fff5ba 0%, #ffb5b5 100%) !important; /* Amarillo pastel a rosa coral */
+}
+.menu-button-emotions:hover {
+  background-image: linear-gradient(to right, #fffbe7 0%, #ffd6d6 100%) !important;
+}
+
+.menu-button-freeplay {
+  background-image: linear-gradient(to right, #baffc9 0%, #bae1ff 100%) !important; /* Verde menta a celeste pastel */
+}
+.menu-button-freeplay:hover {
+  background-image: linear-gradient(to right, #e0ffe7 0%, #e0f7ff 100%) !important;
+}
+
+
+.menu button, .game-button {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 450px; /* Un poco más ancho si el texto es largo */
+  margin: 12px auto; /* Un poco menos de margen vertical */
+  padding: 18px 22px;
+  font-size: 1.3em; /* Ligeramente más pequeño para acomodar más botones */
+  font-weight: bold;
+  border-radius: 50px; 
+  border: none;
+  background-image: linear-gradient(to right, #ffd6e0 0%, #c7ceea 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(100, 100, 100, 0.2);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.menu button:hover, .game-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(100, 100, 100, 0.3);
+}
+.menu button:active, .game-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 10px rgba(100, 100, 100, 0.2);
+}
+.menu button .button-icon {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.estudiante h1, .docente h1, .game-module h2 {
+  font-size: 2.3em;
+  color: #ff7eb9; /* Rosa alegre */
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+}
+.estudiante p, .game-module .module-content p { 
+  font-size: 1.15em;
+  color: #5D5C61; 
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.game-module .module-content {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fffbe7; /* Fondo crema pastel */
+  border-radius: 15px;
+}
+
+
+/* --- Estilos Mascota Luna (sin cambios) --- */
+#mascot-container {
+  position: fixed; 
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#mascot-container.hidden {
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
+}
+#mascot-luna {
+  width: 100px; 
+  height: auto;
+  margin-right: -15px; 
+  z-index: 2;
+  filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
+  animation: bounceLuna 2s infinite ease-in-out;
+}
+@keyframes bounceLuna {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.speech-bubble {
+  background: #fff8f0;
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.09);
+  position: relative;
+  max-width: 250px;
+  border: 3px solid #ffb5e8;
+  z-index: 1;
+}
+.speech-bubble:after { 
+  content: '';
+  position: absolute;
+  bottom: 15px; 
+  left: -14px; 
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-right-color: #ffb5e8; 
+  border-left: 0;
+  margin-top: -15px; 
+}
+.speech-bubble:before { 
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-right-color: #fff8f0;
+  border-left: 0;
+  margin-top: -15px;
+  z-index: 1; 
+}
+#mascot-text {
+  margin: 0;
+  font-size: 1.1em;
+  color: #ff7eb9;
+  line-height: 1.4;
+}
+
+/* --- Estilos Módulo de Emociones (colores pastel) --- */
+#emotion-display-container {
+  margin-bottom: 25px;
+  min-height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#emotion-face-img {
+    width: 160px;
+    height: 160px;
+    border: 6px solid #fff5ba; /* Amarillo pastel */
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fffbe7;
+    box-shadow: 0 0 20px rgba(255, 245, 186, 0.5);
+    transition: transform 0.3s ease-out;
+}
+#emotion-face-img.reveal { 
+    transform: scale(1.1);
+}
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.options-grid button {
+  padding: 18px 12px;
+  font-size: 1.2em;
+  background-color: #bae1ff; /* Celeste pastel */
+  border-radius: 20px;
+  border: none;
+  color: #4A4A4A;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.08);
+}
+.options-grid button:hover {
+  background-color: #b5ead7;
+  transform: translateY(-2px);
+}
+.options-grid button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.options-grid button.correct {
+  background-color: #baffc9 !important;
+  color: #2e7d32 !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #a5d6a7;
+}
+.options-grid button.incorrect {
+  background-color: #ffb5b5 !important;
+  color: #b71c1c !important;
+  animation: shake 0.5s;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+
+/* --- Estilos Módulo de ARTE --- */
+#art-forest .toolbar {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+#art-forest .toolbar .color-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+#art-forest .toolbar button:not(.color-btn) {
+  padding: 8px 12px;
+  background-color: #add8e6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#art-forest .toolbar button:not(.color-btn):hover {
+  background-color: #9acae0;
+}
+#art-forest #drawing-canvas {
+  background-color: white;
+  touch-action: none; /* Importante para dibujo en táctiles */
+}
+
+/* --- Estilos Módulo de LITERATURA --- */
+.story-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#story-content {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #4A4A4A;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#new-story-btn {
+    background-image: linear-gradient(to right, #ffb5e8 0%, #bae1ff 100%);
+    margin-top: 15px;
+}
+
+.loading-story {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+#story-corner #story-placeholder {
+    background-color: #ffe7ba;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.story-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 15px;
+}
+
+.story-card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; /* Ancho fijo para el contenedor */
+    margin: 0 auto; /* Centrar la tarjeta */
+}
+
+.story-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* Mantiene la imagen cuadrada */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.story-card h4 {
+    color: #4A4A4A;
+    margin: 10px 0;
+    font-size: 1.1em;
+    height: 2.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.play-story {
+    margin-top: 10px;
+    background-image: linear-gradient(to right, #ffb5e8 0%, #bae1ff 100%);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.play-story:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.play-story.playing {
+    background-image: linear-gradient(to right, #ff7eb9 0%, #ff65a3 100%);
+    box-shadow: 0 0 15px rgba(255, 126, 185, 0.5);
+}
+
+/* --- Estilos Módulo de EXPLORACIÓN --- */
+#explorers-garden #garden-scene {
+    overflow: hidden; /* Para que los elementos no se salgan si son muy grandes */
+    background-color: #baffc9;
+}
+
+/* Estilos base para elementos explorables */
+.explorable-item {
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Posicionamiento ajustado para los elementos explorables */
+.butterfly {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 45px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.flower {
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+    width: 55px;
+    animation: swing 4s infinite ease-in-out;
+}
+
+.bird {
+    position: absolute;
+    top: 15%;
+    right: 30%;
+    width: 40px;
+    animation: float 4s infinite ease-in-out;
+}
+
+.ladybug {
+    position: absolute;
+    bottom: 9%;
+    left: 35%;
+    width: 35px;
+    animation: crawl 6s infinite linear;
+}
+
+.sun {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 65px;
+    animation: rotate 20s infinite linear;
+}
+
+.water {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    width: 40px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+/* Efectos hover mejorados */
+.explorable-item:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 255, 0, 0.6));
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Estilos para la paginación --- */
+.story-pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-btn {
+    padding: 8px 15px;
+    background: linear-gradient(to right, #ffb5e8 0%, #bae1ff 100%);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.page-indicator {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Estilos para el juego de letras */
+.letters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.letter-card {
+  background: linear-gradient(to right bottom, #ffb5e8, #bae1ff);
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.letter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.letter-card.matched {
+  background: linear-gradient(to right bottom, #baffc9, #b5ead7);
+  pointer-events: none;
+}
+
+.letter-display {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #ff7eb9;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  min-height: 100px;
+}

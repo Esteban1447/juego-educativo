@@ -1,0 +1,74 @@
+{
+  "stories": [
+    {
+      "id": 1,
+      "title": "El conejito curioso",
+      "content": "Había una vez un conejito llamado Coco que vivía en un bosque lleno de árboles altos y flores de colores. Coco era muy curioso y siempre quería descubrir cosas nuevas. Un día, mientras exploraba, encontró una flor mágica que brillaba con colores que nunca había visto antes. Cuando tocó la flor, sintió un cosquilleo y descubrió que podía saltar mucho más alto que antes.\nEmocionado por su nuevo poder, Coco empezó a saltar por todo el bosque, ayudando a sus amigos animales a alcanzar frutas, cruzar ríos y evitar peligros. Los demás animales quedaron sorprendidos y felices de tener a Coco como amigo, porque siempre estaba dispuesto a ayudar. Con el tiempo, Coco aprendió que la verdadera magia no estaba solo en saltar alto, sino en la bondad y la amistad que compartía con todos.",
+      "author": "Luna la Conejita",
+      "moral": "La verdadera magia está en ayudar a los demás"
+    },
+    {
+      "id": 2,
+      "title": "La estrella que perdió su brillo",
+      "content": "En lo más alto del cielo, entre miles de estrellas, vivía una pequeña estrella llamada Luminita. Luminita solía brillar con fuerza y alegrar las noches, pero un día empezó a sentirse triste y su brillo se apagó poco a poco. Se sentía sola porque pensaba que nadie la veía ni la quería. Las otras estrellas seguían brillando, pero ella se escondía detrás de las nubes.\nUn niño que amaba mirar las estrellas notó que Luminita estaba apagada y decidió cantarle una canción muy dulce y llena de esperanza. La música llegó hasta el cielo y poco a poco Luminita empezó a brillar otra vez, más fuerte que nunca. Desde entonces, cada noche ilumina el cielo con alegría, y el niño sabe que con amor y amistad, cualquier tristeza puede desaparecer.",
+      "author": "Luna la Conejita",
+      "moral": "El amor y la amistad pueden iluminar hasta la noche más oscura"
+    },
+    {
+      "id": 3,
+      "title": "La mariposa y el niño",
+      "content": "Un niño que solía jugar solo en el jardín de su casa, un día conoció a una mariposa que había perdido su color. El niño, con su amor por la naturaleza, decidió ayudarla. La llevó a casa y la cuidó hasta que recuperó sus colores brillantes. La mariposa, en agradecimiento, llevó al niño en un viaje mágico por encima de los árboles y ríos, mostrándole lo hermosa que era la vida desde el aire.",
+      "author": "Luna la Conejita",
+      "moral": "Ayudar a los demás nos puede llevar a vivir experiencias maravillosas"
+    },
+    {
+      "id": 4,
+      "title": "El árbol de los deseos",
+      "content": "En el centro del bosque, había un árbol muy antiguo y sabio que cumplía los deseos de aquellos que realmente lo necesitaban. Un día, una ardilla llamada Sara llegó hasta él, deseando poder encontrar suficiente comida para su familia durante el invierno. El árbol, conmovido por su sinceridad, hizo que un grupo de nueces cayera a sus pies. Sara, agradecida, prometió cuidar siempre del árbol y contar a todos sobre su bondad.",
+      "author": "Luna la Conejita",
+      "moral": "La gratitud y el cuidado hacia los demás son fundamentales"
+    },
+    {
+      "id": 5,
+      "title": "El león y el ratón",
+      "content": "Un día, un león estaba durmiendo en la selva cuando un ratón comenzó a correr sobre su cuerpo. El león, molesto, atrapó al ratón con su pata y estaba a punto de comérselo. El ratón, asustado, le dijo: 'Por favor, no me comas. Algún día podré ayudarte'. El león, divertido por la idea de que un pequeño ratón pudiera ayudarlo, decidió dejarlo ir.\nDías después, el león quedó atrapado en una red tendida por cazadores. El ratón, al ver esto, corrió rápidamente y roió las cuerdas de la red hasta liberar al león. El león, agradecido, comprendió que incluso los más pequeños pueden ser de gran ayuda.",
+      "author": "Luna la Conejita",
+      "moral": "Nunca subestimes el poder de la amistad y la gratitud"
+    },
+    {
+      "id": 6,
+      "title": "La tortuga y la liebre",
+      "content": "Una liebre se burlaba constantemente de una tortuga por su lentitud. Cansada de las burlas, la tortuga retó a la liebre a una carrera. Todos los animales del bosque vinieron a ver la carrera. La liebre, confiada de su victoria, salió disparada mientras la tortuga avanzaba lentamente pero sin parar.\nEn un momento dado, la liebre, viendo que tenía una gran ventaja, decidió dormir una siesta. La tortuga, aprovechando esto, continuó avanzando y cruzó la meta antes que la liebre. Todos los animales celebraron a la tortuga, y la liebre aprendió que no debía subestimar a los demás ni ser arrogante.",
+      "author": "Luna la Conejita",
+      "moral": "La perseverancia y la humildad son más importantes que la velocidad"
+    },
+    {
+      "id": 7,
+      "title": "El pájaro y el río",
+      "content": "Un pájaro tenía su nido en la orilla de un río. Un día, mientras buscaba comida, vio que un pez luchaba por sobrevivir fuera del agua. El pájaro, recordando que alguna vez un pez le había salvado la vida, decidió ayudarlo. Con cuidado, el pájaro tomó al pez con su pico y lo devolvió al agua.\nEl pez, agradecido, prometió ayudar al pájaro si alguna vez lo necesitaba. Tiempo después, cuando el pájaro tuvo problemas para encontrar comida, el pez le llevó a un lugar secreto del río donde había abundancia de peces. Así, el pájaro aprendió sobre la importancia de la gratitud y la ayuda mutua.",
+      "author": "Luna la Conejita",
+      "moral": "La ayuda desinteresada siempre será recompensada"
+    },
+    {
+      "id": 8,
+      "title": "La flor y la lluvia",
+      "content": "En un jardín, una flor hermosa pero solitaria anhelaba la compañía de otras flores. Un día, llegó una lluvia suave y comenzó a hablar con la flor. La lluvia le contó que estaba de paso, pero que podía ayudarla a encontrar amigos. La flor, emocionada, pidió su ayuda.\nLa lluvia, cumpliendo su promesa, hizo que brotaran semillas de flores alrededor de la flor solitaria. Con el tiempo, el jardín se llenó de flores de todos los colores y tamaños. La flor, feliz, agradeció a la lluvia por su amabilidad y aprendió que a veces, la amistad puede llegar de las maneras más inesperadas.",
+      "author": "Luna la Conejita",
+      "moral": "La amistad puede florecer en cualquier momento y lugar"
+    },
+    {
+      "id": 9,
+      "title": "El viaje de la semilla",
+      "content": "Una semilla de árbol soñaba con convertirse en un gran árbol y dar sombra y frutos a los que pasaran por su lado. Un día, un viento fuerte la llevó lejos de su hogar. La semilla, asustada pero decidida, comenzó su viaje. Rodó por colinas, cruzó ríos y fue ayudada por muchos animales del bosque que creyeron en su sueño.\nFinalmente, la semilla encontró un lugar perfecto para crecer. Con el tiempo, se convirtió en un majestuoso árbol que cumplió todos sus sueños. La semilla, ahora árbol, sonreía al recordar su viaje y cómo nunca dejó de creer en sí misma.",
+      "author": "Luna la Conejita",
+      "moral": "Nunca dejes de creer en tus sueños, por más lejos que parezcan"
+    },
+    {
+      "id": 10,
+      "title": "El zorro y la luna",
+      "content": "Zuri era un zorro que cada noche miraba la luna con asombro y soñaba con tocarla. Saltaba y saltaba tratando de alcanzarla, pero la luna siempre estaba muy lejos. Una noche mágica, la luna bajó un poco para escuchar el deseo de Zuri y le regaló un rayo de luz especial para que iluminara su camino por el bosque.\nDesde ese momento, Zuri caminaba feliz por las noches oscuras, sabiendo que la luna siempre estaba cerca para cuidarlo y guiarlo. Aprendió que aunque los sueños a veces parecen difíciles, siempre pueden cumplirse de formas sorprendentes.",
+      "author": "Luna la Conejita",
+      "moral": "Los sueños pueden cumplirse de formas inesperadas"
+    }
+  ]
+}
